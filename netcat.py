@@ -31,7 +31,7 @@ class NetCat:
 
     def send(self):
         self.socket.connect((self.args.target, self.args.port))
-        
+        print(f'Connected to: {self.args.target}:{self.args.port}')
         if self.buffer:
             self.socket.send(self.buffer)
 
@@ -60,6 +60,7 @@ class NetCat:
     
     def listen(self):
         self.socket.bind((self.args.target, self.args.port))
+        print(f'[*] Listening on PORT: {self.args.port}')
         self.socket.listen(5)
         client_socket, _ = self.socket.accept()
         client_thread = threading.Thread(target=self.handle, args=(client_socket,))
