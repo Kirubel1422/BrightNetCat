@@ -118,7 +118,7 @@ class NetCat:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="BHP Net Tool", # Description dedicated to
-        formatter_class=argparse.RawDescriptionHelpFormatter, # Because it displays help on terminal
+        formatter_class=argparse.RawDescriptionHelpFormatter, # Because it displays help on terminal keep the formating raw
         epilog=textwrap.dedent(
         '''
         Example: 
